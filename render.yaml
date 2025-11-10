@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: n8n-deepseek-bot
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    port: 5678
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: "true"
+      - key: N8N_BASIC_AUTH_USER
+        value: "admin"
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: "ваш_сложный_пароль"
+      - key: WEBHOOK_URL
+        value: "https://n8n-deepseek-bot.onrender.com"  # Замените на ваш URL Render!
+    # Секреты добавляйте через UI Render (не в GitHub!)
